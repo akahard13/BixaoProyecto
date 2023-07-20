@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+        <FrameLayout
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center_vertical"
+            android:padding="5dp">
+            <TextView
+                android:id="@+id/tv_first"
+                android:fontFamily="@font/bold_tommy"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/circle_background"
+                android:text="H"/>
+        </FrameLayout>
+        <LinearLayout
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="15dp"
+            android:layout_width="80dp"
+
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/bold_tommy"
+                android:text="Harnaldo"/>
+            <TextView
+                android:id="@+id/tv_last_name"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/bold_tommy"
+                android:text="Quiroz"/>
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_marginTop="6dp"
+            android:layout_width="80dp"
+            android:layout_height="55dp"
+            android:orientation="vertical"
+            android:layout_marginStart="15dp">
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:fontFamily="@font/regular_tommy"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="12-12-12" />
+
+            <TextView
+                android:id="@+id/tv_curse"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/regular_tommy"
+                android:text="Jiu-Jitsu" />
+        </LinearLayout>
+        <FrameLayout
+            android:id="@+id/iv_delete_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="15dp">
+            <ImageButton
+                android:id="@+id/bt_pay"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="-15dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/payment_ic"
+                app:tint="@color/cinta"
+                android:contentDescription="@string/pay"/>
+            <ImageButton
+                android:id="@+id/bt_edit"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="25dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/edit_ic"
+                app:tint="@color/cinta"
+                android:contentDescription="@string/edit" />
+
+            <ImageButton
+                android:id="@+id/bt_delete"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="65dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/delete_ic"
+                app:tint="@color/cinta"
+                android:contentDescription="@string/delete"/>
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

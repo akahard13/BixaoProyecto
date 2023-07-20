@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="25dp">
+            <TextView
+                android:layout_margin="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bad_grunge"
+                android:textSize="100sp"
+                android:text="@string/team"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal">
+
+                <LinearLayout
+                    android:id="@+id/bt_add"
+                    android:layout_width="170dp"
+                    android:layout_height="150dp"
+                    android:background="@drawable/recurso_1"
+                    android:backgroundTint="#14A3D8"
+                    android:elevation="4dp"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical"
+                    android:translationZ="2dp">
+
+                    <ImageButton
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginEnd="50dp"
+                        android:background="@android:color/transparent"
+                        android:contentDescription="@string/tadd"
+                        android:gravity="center"
+                        android:src="@drawable/ic_create" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="45dp"
+                        android:layout_marginTop="25dp"
+                        android:fontFamily="@font/bold_tommy"
+                        android:gravity="center_horizontal"
+                        android:text="@string/add"
+                        android:textColor="#ffffff"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/bt_list"
+                    android:layout_width="170dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/recurso_1"
+                    android:backgroundTint="#F4B707"
+                    android:elevation="4dp"
+                    android:orientation="vertical"
+                    android:translationZ="2dp">
+
+                    <ImageButton
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginEnd="50dp"
+                        android:background="@android:color/transparent"
+                        android:contentDescription="@string/tlist"
+                        android:gravity="center"
+                        android:src="@drawable/list_client" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="48dp"
+                        android:layout_marginTop="25dp"
+                        android:fontFamily="@font/bold_tommy"
+                        android:text="@string/list"
+                        android:textColor="#ffffff"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal">
+            <LinearLayout
+                android:id="@+id/bt_backup"
+                android:layout_width="170dp"
+                android:layout_height="150dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/recurso_1"
+                android:backgroundTint="#05594A"
+                android:elevation="4dp"
+                android:orientation="vertical"
+                android:translationZ="2dp">
+
+                <ImageButton
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="50dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/texport"
+                    android:gravity="center"
+                    android:src="@drawable/export_ic" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="25dp"
+                    android:fontFamily="@font/bold_tommy"
+                    android:text="@string/export"
+                    android:textColor="#ffffff"
+                    android:textSize="18sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/bt_pending"
+                android:layout_width="170dp"
+                android:layout_height="150dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/recurso_1"
+                android:backgroundTint="#F16E52"
+                android:elevation="4dp"
+                android:orientation="vertical"
+                android:translationZ="2dp">
+                <ImageButton
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="50dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/twait"
+                    android:gravity="center"
+                    android:src="@drawable/pending" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/bold_tommy"
+                    android:gravity="center_horizontal"
+                    android:text="@string/wait"
+                    android:textColor="#ffffff"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </LinearLayout>
+        </LinearLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

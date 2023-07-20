@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Bixao León</string>
+    <string name="tadd">text agregar</string>
+    <string name="tlist">text clientes</string>
+    <string name="twait">text pendientes</string>
+    <string name="texport">text exportar Base</string>
+    <string name="add">Agregar</string>
+    <string name="list">Clientes</string>
+    <string name="wait">Pendientes</string>
+    <string name="export">Respaldo</string>
+    <string name="team">TEAM BIXAO</string>
+    <string name="pay">Pagar Cliente</string>
+    <string name="delete">Eliminar Cliente</string>
+    <string name="edit">Editar Cliente</string>
+    <string name="home">Regresar a inicio</string>
+    <string name="ask_name">Escriba aquí</string>
+    <string name="ask_last_name">Escriba aquí</string>
+    <string name="input_name">Nombre:</string>
+    <string name="input_curse">Seleccione su curso:</string>
+    <string name="input_last_name">Apellido:</string>
+    <string name="ask_dates">Elija la fecha</string>
+    <string name="input_dates">Fecha de pago:</string>
+    <string name="next">Siguiente</string>
+    <string name="curse">Cursos disponibles</string>
+    <string name="register">Registrar</string>
+    <string name="save">Guardar</string>
+    <string name="selected_curse">Curso Seleccionado:</string>
+</resources>

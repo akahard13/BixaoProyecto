@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_add_client"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AgendarActivity">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/cinta"
+                android:layout_marginStart="-110dp"
+
+                android:fontFamily="@font/bold_tommy"
+                android:gravity="center_horizontal"
+                android:text="@string/register"
+                android:textSize="30sp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_Principal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:elevation="8dp"
+                app:cardCornerRadius="10dp"
+                app:contentPadding="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:background="@android:color/transparent">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_margin="5dp">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginStart="15dp"
+                                android:fontFamily="@font/bold_tommy"
+                                android:layout_marginBottom="10dp"
+                                android:text="@string/input_name"
+                                android:textSize="15sp" />
+
+                            <EditText
+                                android:id="@+id/et_name"
+                                android:layout_width="160dp"
+                                android:textColorHint="@color/whitey"
+                                android:layout_height="53dp"
+                                android:fontFamily="@font/regular_tommy"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/text_form"
+                                android:elevation="2dp"
+                                android:textColor="@color/whitey"
+                                android:hint="@string/ask_name"
+                                android:inputType="textPersonName"
+                                android:padding="15dp"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_margin="5dp"
+                            android:background="@android:color/transparent">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:fontFamily="@font/bold_tommy"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:text="@string/input_last_name"
+                                android:textSize="15sp" />
+
+                            <EditText
+                                android:id="@+id/et_last_name"
+                                android:layout_width="170dp"
+                                android:textColorHint="@color/whitey"
+                                android:layout_height="53dp"
+                                android:textColor="@color/whitey"
+                                android:fontFamily="@font/regular_tommy"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/text_form"
+                                android:elevation="2dp"
+                                android:hint="@string/ask_last_name"
+                                android:inputType="textPersonName"
+                                android:padding="15dp"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:fontFamily="@font/bold_tommy"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/input_dates"
+                        android:textSize="15sp"/>
+
+                    <EditText
+                        android:id="@+id/et_date"
+                        android:elevation="2dp"
+                        android:textColorHint="@color/whitey"
+                        android:textColor="@color/whitey"
+                        android:layout_width="match_parent"
+                        android:layout_height="53dp"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/text_form"
+                        android:clickable="true"
+                        android:focusable="false"
+                        android:fontFamily="@font/regular_tommy"
+                        android:hint="@string/ask_dates"
+                        android:inputType="date"
+                        android:maxLines="1"
+                        android:onClick="onClickScheduleDate"
+                        android:padding="15dp"
+                        android:textSize="15sp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:fontFamily="@font/bold_tommy"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/input_curse"
+                        android:textSize="15sp"/>
+                    <Spinner
+                        android:id="@+id/spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="53dp"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/text_form"
+                        />
+
+                    <Button
+                        android:layout_gravity="center_horizontal"
+                        android:id="@+id/btn_next"
+                        android:layout_width="160dp"
+                        android:layout_height="70dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="25dp"
+                        android:backgroundTint="@color/cinta"
+                        android:background="@drawable/text_form"
+                        android:drawableEnd="@drawable/ic_send"
+                        android:fontFamily="@font/bold_tommy"
+                        android:text="@string/next" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_resume"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:elevation="8dp"
+                app:cardCornerRadius="10dp"
+                app:contentPadding="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:background="@android:color/transparent"
+                        android:layout_marginBottom="20dp">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_margin="5dp">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginStart="15dp"
+                                android:fontFamily="@font/bold_tommy"
+                                android:layout_marginBottom="10dp"
+                                android:text="@string/input_name"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/tv_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/input_name"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/regular_tommy"
+                                android:layout_marginStart="35dp"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_margin="5dp"
+                            android:background="@android:color/transparent">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:fontFamily="@font/bold_tommy"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:text="@string/input_last_name"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/tv_last_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/input_last_name"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/regular_tommy"
+                                android:layout_marginStart="35dp"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:fontFamily="@font/bold_tommy"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/input_dates"
+                        android:textSize="20sp"/>
+
+                    <TextView
+                        android:id="@+id/tv_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/input_dates"
+                        android:textColor="@color/black"
+                        android:layout_marginStart="35dp"
+                        android:fontFamily="@font/regular_tommy"
+                        android:textSize="20sp"
+                        android:layout_marginBottom="20dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:fontFamily="@font/bold_tommy"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/selected_curse"
+                        android:textSize="20sp"/>
+                    <TextView
+                        android:id="@+id/tv_curse"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/curse"
+                        android:textColor="@color/black"
+                        android:layout_marginStart="35dp"
+                        android:fontFamily="@font/regular_tommy"
+                        android:textSize="20sp"
+                        android:layout_marginBottom="20dp"
+                        />
+
+                    <Button
+                        android:layout_gravity="center_horizontal"
+                        android:id="@+id/btn_save"
+                        android:layout_width="160dp"
+                        android:layout_height="70dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="25dp"
+                        android:backgroundTint="@color/cinta"
+                        android:background="@drawable/text_form"
+                        android:drawableEnd="@drawable/ic_save"
+                        android:fontFamily="@font/bold_tommy"
+                        android:text="@string/save" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>
