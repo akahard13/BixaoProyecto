@@ -20,6 +20,7 @@ import com.example.bixao10.ClientsActivity.Companion.clientSelect
 import com.example.bixao10.databinding.ActivityAgendarBinding
 import com.example.bixao10.viewModel.ClientViewModel
 import com.google.android.material.snackbar.Snackbar
+import com.google.gson.Gson
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
@@ -95,13 +96,13 @@ class AgendarActivity : AppCompatActivity() {
             val adapter = binding.spinner.adapter as SpinnerAdapter
             val position = adapter.getPosition(selectedOption) // Obtener la posición de la opción seleccionada en el adaptador
             binding.spinner.setSelection(position)
+            ClientsActivity.isEdit = false
         }
         binding.btnSave.setOnClickListener {
             GlobalScope.launch {
                 if(ClientsActivity.isEdit)
                 {
                     update()
-                    ClientsActivity.isEdit = false
                 }
                 else {
                     save()
@@ -136,17 +137,23 @@ class AgendarActivity : AppCompatActivity() {
         clientSelect.lastname = binding.tvLastName.text.toString()
         clientSelect.date = binding.tvDate.text.toString()
         clientSelect.curse = selectedOption.toString()
+        val paymentHistory = Gson().fromJson(clientSelect.historial, PaymentHistory::class.java)
+        val payment = Payment(date = binding.tvDate.text.toString())
+        paymentHistory.payments.add(payment)
+        clientSelect.historial = Gson().toJson(paymentHistory)
         viewModel.updateClient(clientSelect)
-
+        ClientsActivity.isEdit = false
         this.finish()
 
     }
     private suspend fun save() {
+
         var newClient = ClientModel(0,
             binding.etName.text.toString(), binding.etLastName.text.toString(),
             binding.etDate.text.toString(),
-            selectedOption.toString()
+            selectedOption.toString(),
         )
+        newClient.initializePaymentHistory(binding.etDate.text.toString())
         viewModel.insertClient(newClient)
         this.finish()
 
