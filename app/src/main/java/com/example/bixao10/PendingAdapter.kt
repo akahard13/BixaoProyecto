@@ -3,6 +3,7 @@ import android.app.AlertDialog
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bixao10.databinding.ItemViewBinding
 import com.example.bixao10.viewModel.ClientViewModel
@@ -56,6 +57,41 @@ class PendingAdapter(
                     ClientsActivity.isEdit = true
                     ClientsActivity.clientSelect = client
                     holder.binding.root.context.startActivity(intent)
+                }
+                holder.binding.btPay.setOnClickListener {
+                    // Obtener la fecha actual del cliente
+                    val currentClientDate = client.date
+
+                    // Convertir la fecha a un formato manejable (por ejemplo, yyyy-MM-dd)
+                    val sdf = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+                    val currentDate = sdf.parse(currentClientDate)
+
+                    // Agregar un mes a la fecha actual
+                    val calendar = Calendar.getInstance()
+                    calendar.time = currentDate
+                    calendar.add(Calendar.MONTH, 1)
+
+                    // Obtener la nueva fecha después de agregar un mes
+                    val newDate = calendar.time
+
+                    // Convertir la nueva fecha al formato original del cliente
+                    val newFormattedDate = sdf.format(newDate)
+
+                    // Actualizar la fecha del cliente
+                    client.date = newFormattedDate
+                    val builder = AlertDialog.Builder(holder.binding.root.context)
+                    builder.setTitle("Mensualidad.")
+                    builder.setMessage("¿Desea realizar el pago de un mes de este cliente?")
+                    builder.setPositiveButton("Sí"){_, _ ->
+                        viewModel.updateClient(client)
+                        notifyDataSetChanged()
+                        Toast.makeText(holder.binding.root.context, "Pago realizado con éxito.", Toast.LENGTH_SHORT).show()
+                    }
+                    builder.setNegativeButton("No"){dialog, _ ->
+                        dialog.dismiss()
+                    }
+                    val dialog = builder.create()
+                    dialog.show()
                 }
             } else {
                 // Si la fecha no es menor a la fecha actual, ocultar la vista del cliente

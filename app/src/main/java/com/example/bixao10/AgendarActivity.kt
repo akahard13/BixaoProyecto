@@ -158,8 +158,14 @@ class AgendarActivity : AppCompatActivity() {
         val dayOfMonth = selectedCalendar.get(Calendar.DAY_OF_MONTH)
         val listener = DatePickerDialog.OnDateSetListener { _, y, m, d ->
             selectedCalendar.set(y, m, d)
-            val displayMonth = m + 2 // Sumar 1 al valor del mes
-            etScheduleDate.setText("$y-$displayMonth-$d")
+
+            // Agregar 1 al valor del mes
+            val displayMonth = m + 1
+
+            // Formatear el valor del mes para que siempre tenga dos dígitos
+            val formattedMonth = String.format("%02d", displayMonth)
+
+            etScheduleDate.setText("$y-$formattedMonth-$d")
             etScheduleDate.error = null
         }
         DatePickerDialog(this, listener, year, month, dayOfMonth).show()
